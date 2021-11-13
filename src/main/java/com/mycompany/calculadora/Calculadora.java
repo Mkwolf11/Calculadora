@@ -22,7 +22,7 @@ public class Calculadora extends Frame implements ActionListener {
     Integer resultado;
     
     public Calculadora(){
-        //panel de texto      
+        //texto      
         texto = new TextField(20);
         texto.setBackground(Color.magenta);
         texto.setFont(new Font("",Font.ROMAN_BASELINE, 50));
