@@ -22,7 +22,7 @@ public class Calculadora extends Frame implements ActionListener {
     Integer resultado;
     
     public Calculadora(){
-        //texto      
+        //textField      
         texto = new TextField(20);
         texto.setBackground(Color.magenta);
         texto.setFont(new Font("",Font.ROMAN_BASELINE, 50));
@@ -76,12 +76,12 @@ public class Calculadora extends Frame implements ActionListener {
         }    
     }
     
-    //Con este metodo es por asi decirlo con el que creo numeros, hasta que introduzco un valorP de operacion
+    //Con este metodo es por asi decirlo con el que creo numeros, hasta que introduzco un valor de operacion
     public void Numeros(String numero) {                  
         texto.setText(texto.getText()+numero);   
     }   
           
-    //este metodo mira a ver si hemos pasado un numero
+    //este metodo mira a ver si hemos pasado un numero como valor
     public boolean ComprobarNumero (String orden) { 
         try {
             Integer.parseInt(orden); 
@@ -115,9 +115,9 @@ public class Calculadora extends Frame implements ActionListener {
             num2 = parseInt((String)texto.getText());
             // Establezco un if que segun el valorp hace distintas operaciones
             if(this.valorP == "     +     "){
-                resultado = num1 + num2;
+                resultado = num1 + num2;//hago la operacion entre num1 y num2 para porterior mostrar el resultado
                 texto.setText(Integer.toString(resultado));
-                resultado = null;
+                resultado = null;// vacio el resultado
             }else if(this.valorP == "     -     "){
                 resultado = num1 - num2;                
                 texto.setText(Integer.toString(resultado));
@@ -131,7 +131,7 @@ public class Calculadora extends Frame implements ActionListener {
                 texto.setText(Integer.toString(resultado));
                 resultado = null;
             }
-        } else if (valor.equals("CE")) {
+        } else if (valor.equals("CE")) {// borro el textfield y los valores de los integer
             num1 = null;
             num2 = null;
             texto.setText("");
